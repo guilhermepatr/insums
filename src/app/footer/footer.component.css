@@ -1,0 +1,101 @@
+.col-text{
+    margin-right: 1rem;
+
+}
+
+.title{
+    color: #41ff2b;
+    font-weight: bolder;
+    font-weight: 900;
+    font-size: 1.25rem;
+       
+}
+
+.link{
+   
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: bold;
+}
+a:hover{
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+.small-text{
+    font-size: smaller;
+    color: #f5f5f5;
+}
+
+.pay-logo-footer{
+    padding-bottom: 0.7rem;
+    padding-right: 0.7rem;
+}
+
+.btn-service{
+    width: 19rem;
+    height: 3rem;
+    border-radius: 6px;
+    font-weight: bolder;
+}
+
+.btn-telephone{
+    background-color: #41ff2b;
+    border:1px solid #41ff2b;
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+}
+
+.btn-whatapp{
+    background-color: transparent;
+    border:1px solid  #f5f5f5;
+    color: #f5f5f5;
+    margin-bottom: 1.25rem;
+}
+
+.bi{
+    font-size: 1.3rem;
+}
+
+.open{
+    color: #f5f5f5;
+    font-weight: bolder;
+}
+
+.btn-social-midia-footer{
+    height: 2.375rem;
+    width: 2.375rem;
+    background-color: #41ff2b;
+    border:1px solid #41ff2b;
+    border-radius: 50%;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.rights{    
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;   
+    background-color: rgba(255, 255, 255, 0.45);
+    color: white;
+   
+    
+}
+
+.rights p{
+    
+    font-weight: bold;
+}
+
+.class-footer{
+    background-color: gray;
+    background-image: url(https://res.cloudinary.com/ddbfgigsu/image/upload/v1731983383/project-insums/background-footer/Background_urvlfp.png);
+    background-repeat: round;
+    padding-top: 5rem;
+
+}
