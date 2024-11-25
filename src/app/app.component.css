@@ -1,0 +1,11 @@
+/* Define o layout do AppComponent para ocupar toda a altura da viewport */
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* O main ocupa o espaço disponível */
+main {
+  flex: 1 0 auto;
+}
