@@ -9,6 +9,7 @@
 .img-logo {
   max-width: 8.125rem;
   margin-left: 3rem;
+  background-color: #005b1e;
 }
 
 .img-insums {
@@ -56,6 +57,12 @@ input {
 
 .small-login {
   font-weight: bolder;
+}
+
+.bi-list {
+  display: flex;
+  color: #efefef;
+  align-items: center;
 }
 
 .bi-cart3 {
