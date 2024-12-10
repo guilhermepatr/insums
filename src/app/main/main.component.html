@@ -1,1 +1,12 @@
-<p>main works!</p>
+<div class="form-container">
+  <h2>Digite seu nome:</h2>
+
+  <!-- Two-way data binding entre input e nome -->
+  <input [(ngModel)]="userName" type="text" placeholder="Digite seu nome" />
+
+  <!-- Interpolation para mostrar o nome inserido -->
+  <p>Olá, {{ userName }}!</p>
+
+  <!-- Botão com Event Binding -->
+  <button (click)="onSubmit()">Submit</button>
+</div>
