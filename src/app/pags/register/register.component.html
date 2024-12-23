@@ -1,0 +1,58 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="row w-50 shadow-lg p-5 rounded cadastro-container">
+      <h2 class="text-center mb-4">Cadastro</h2>
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" id="nome" formControlName="nome" class="form-control" placeholder="Digite seu nome">
+          <small class="text-danger" *ngIf="registroForm.get('nome')?.errors && registroForm.get('nome')?.touched">
+            {{ getErrorMessage('nome') }}
+          </small>
+        </div>
+  
+        <div class="mb-3">
+          <label for="sobrenome" class="form-label">Sobrenome</label>
+          <input type="text" id="sobrenome" formControlName="sobrenome" class="form-control" placeholder="Digite seu sobrenome">
+          <small class="text-danger" *ngIf="registroForm.get('sobrenome')?.errors && registroForm.get('sobrenome')?.touched">
+            {{ getErrorMessage('sobrenome') }}
+          </small>
+        </div>
+  
+        <div class="mb-3">
+          <label for="dateNascimento" class="form-label">Data de Nascimento</label>
+          <input type="date" id="dateNascimento" formControlName="dateNascimento" class="form-control">
+          <small class="text-danger" *ngIf="registroForm.get('dateNascimento')?.errors && registroForm.get('dateNascimento')?.touched">
+            {{ getErrorMessage('dateNascimento') }}
+          </small>
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" id="email" formControlName="email" class="form-control" placeholder="Digite seu e-mail">
+          <small class="text-danger" *ngIf="registroForm.get('email')?.errors && registroForm.get('email')?.touched">
+            {{ getErrorMessage('email') }}
+          </small>
+        </div>
+  
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" id="senha" formControlName="senha" class="form-control" placeholder="Digite sua senha">
+          <small class="text-danger" *ngIf="registroForm.get('senha')?.errors && registroForm.get('senha')?.touched">
+            {{ getErrorMessage('senha') }}
+          </small>
+        </div>
+  
+        <div class="mb-3">
+          <label for="confirmSenha" class="form-label">Confirme sua Senha</label>
+          <input type="password" id="confirmSenha" formControlName="confirmSenha" class="form-control" placeholder="Confirme sua senha">
+          <small class="text-danger" *ngIf="registroForm.get('confirmSenha')?.errors && registroForm.get('confirmSenha')?.touched">
+            {{ getErrorMessage('confirmSenha') }}
+          </small>
+        </div>
+  
+        <button type="submit" class="btn btn-success w-100 mt-3" [disabled]="!registroForm.valid">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>

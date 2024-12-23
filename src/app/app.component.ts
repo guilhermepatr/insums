@@ -4,11 +4,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './pags/login/login.component';
 import { MainComponent } from './main/main.component';
+import { RegisterComponent } from './pags/register/register.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, HeaderComponent,MainComponent, LoginComponent],
+  imports: [RouterOutlet, FooterComponent, HeaderComponent,MainComponent, LoginComponent, RegisterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

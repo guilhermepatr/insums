@@ -1,0 +1,50 @@
+.body {
+    background-color: #f8f9fa; /* Fundo claro */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .login-container {
+    background-color: #ffffff; /* Fundo do formulário */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+  
+  h2 {
+    font-weight: bold;
+    color: #343a40; /* Cinza escuro */
+  }
+
+  .title{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+   
+    
+  }
+  
+  button {
+    border-radius: 50px; /* Botões arredondados */
+    margin-bottom: 1rem;
+  }
+  
+  /* Ícones e texto dos botões de login */
+  button .bi {
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a.link-secondary:hover {
+    color: #6c757d; /* Alteração ao passar o mouse */
+  }
+  
+  a.link-primary {
+    color: #0d6efd;
+    font-weight: bold;
+  }
+  
+  a.link-primary:hover {
+    color: #0a58ca;
+  }
