@@ -112,13 +112,16 @@
   <!----------------Finesh Small ------------------------------->
 
   <!--------------------------------------------------->
+  <!-- insums logo-->
   <div class="d-none d-lg-flex container-header">
     <div class="img-logo">
+      <a [routerLink]="['/main']">
       <img
         class="img-insums"
         src="https://res.cloudinary.com/ddbfgigsu/image/upload/v1732137063/project-insums/header-img/logo-insums.png"
         alt="logo-insums"
       />
+      </a>
     </div>
     <div class="search-header">
       <label for="">
@@ -147,7 +150,9 @@
         </div>
       </label>
     </div>
+    <!--Login item start-->
     <div class="login">
+      <a [routerLink]="['/login']" >
       <span class="login-item"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +174,9 @@
           Meus pedidos
         </small>
       </div>
+    </a>
     </div>
+    <!--Login item finesh-->
     <!------------Shop------------->
     <div class="shop-header">
       <button

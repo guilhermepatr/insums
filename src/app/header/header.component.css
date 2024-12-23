@@ -51,6 +51,12 @@ input {
   padding: 0 2rem 0 2rem;
 }
 
+.login a {
+  text-decoration: none;
+  color: #efefef;
+  display: flex;
+}
+
 .login-item {
   padding-right: 1rem;
 }
