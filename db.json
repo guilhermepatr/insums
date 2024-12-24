@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "nome": "João",
+      "sobrenome": "Silva",
+      "dateNascimento": "2000-01-01",
+      "email": "joao@exemplo.com",
+      "senha": "SenhaForte123"
+    },
+    {
+      "id": "5a93",
+      "nome": "Guilherme",
+      "sobrenome": "Silva",
+      "dateNascimento": "1996-06-19",
+      "email": "guilhermeps96@hotmail.com",
+      "senha": "Gui123456"
+    }
+  ]
+}

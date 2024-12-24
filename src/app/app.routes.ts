@@ -4,10 +4,13 @@ import { LoginComponent } from './pags/login/login.component';
 import { MainComponent } from './main/main.component';
 import { RegisterComponent } from './pags/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './user-service.service';
+import { CommonModule } from '@angular/common';
 
 export const routes: Routes = [
-    //{ path: '', redirectTo: 'main', pathMatch: 'full' }, // Exemplo de redirecionamento para a página inicial
+    { path: '', redirectTo: 'main', pathMatch: 'full' }, // Exemplo de redirecionamento para a página inicial
     { path: 'login', component: LoginComponent }, // Rota para o componente de login
     { path: 'register', component: RegisterComponent}, //Rota para o componente de registro
-    //{ path: 'main', component: MainComponent}
+    { path: 'main', component: MainComponent},
+    //{ path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

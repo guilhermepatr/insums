@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router'; // Adicione esta importação
 import { CustomValidators } from './custom-validators';
+import { UserService } from '../../user-service.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,11 @@ import { CustomValidators } from './custom-validators';
 export class RegisterComponent implements OnInit {
   registroForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService, // Adicione o serviço
+    private router: Router // Adicione o router
+  ) {}
 
   ngOnInit() {
     this.registroForm = this.fb.group({
@@ -34,9 +40,28 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     if (this.registroForm.valid) {
-      console.log(this.registroForm.value);
+      // Remover confirmSenha antes de enviar
+      const userData = {...this.registroForm.value};
+      delete userData.confirmSenha;
+
+      console.log('Enviando dados:', userData); // Debug
+
+      this.userService.registerUser(userData).subscribe({
+        next: (response) => {
+          console.log('Resposta do servidor:', response); // Debug
+          alert('Usuário registrado com sucesso!');
+          this.router.navigate(['/login']);
+        },
+        error: (error) => {
+          console.error('Erro no registro:', error);
+          alert('Erro ao registrar usuário. Tente novamente.');
+        }
+      });
+    } else {
+      console.log('Formulário inválido:', this.registroForm.errors); // Debug
     }
   }
+
 
   getErrorMessage(field: string): string {
     const control = this.registroForm.get(field);
@@ -46,11 +71,7 @@ export class RegisterComponent implements OnInit {
       if (control.errors['minlength']) return 'Tamanho mínimo não atingido';
       if (control.errors['senhaFraca']) return 'A senha deve conter letras maiúsculas, minúsculas e números';
       if (control.errors['menorIdade']) return 'Você deve ter mais de 18 anos';
-    }
-    
-    // Verifica erros no nível do formulário para as senhas
-    if (field === 'confirmSenha' && this.registroForm.errors?.['senhasDiferentes']) {
-      return 'As senhas não coincidem';
+      if (control.errors['senhasDiferentes']) return 'As senhas não coincidem';
     }
     return '';
   }
