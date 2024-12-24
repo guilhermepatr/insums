@@ -169,11 +169,30 @@
       </span>
       <div>
         <small>
-          <span class="small-login">Entre</span> ou
-          <span class="small-login">Cadastra-se</span><br />
-          Meus pedidos
+          <span *ngIf="userName; else defaultText" class="small-login">
+            {{ userName }}
+          </span>
+          <ng-template #defaultText>
+            <span class="small-login">Entre</span> ou
+            <span class="small-login">Cadastre-se</span><br />
+            Meus pedidos
+          </ng-template>
         </small>
       </div>
+      <!---
+      <div>
+        <small>
+          <span *ngIf="userName; else defaultText" class="small-login">
+            {{ userName }}
+          </span>
+          <ng-template #defaultText>
+            <span class="small-login">Entre</span> ou
+            <span class="small-login">Cadastre-se</span><br />
+            Meus pedidos
+          </ng-template>
+        </small>
+      </div>
+    -->
     </a>
     </div>
     <!--Login item finesh-->

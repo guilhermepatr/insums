@@ -1,42 +1,28 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../user-service.service';
-import { User } from '../../user-service.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule,CommonModule, ReactiveFormsModule],
+  imports: [RouterModule, CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-
   @Output() userLoggedIn = new EventEmitter<string>();
+  @Output() userLogin = new EventEmitter<string>();
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
-    
   ) {}
-
-  login(email: string, password: string): void {
-    this.userService.loginUser(email, password).subscribe(user => {
-      if (user) {
-        console.log('Login bem-sucedido:', user);
-        this.userLoggedIn.emit(user.nome); // Emite o nome do usuário
-      } else {
-        console.warn('Falha no login');
-      }
-    });
-  }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -48,12 +34,13 @@ export class LoginComponent implements OnInit{
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, senha } = this.loginForm.value;
-
+      
       this.userService.loginUser(email, senha).subscribe({
         next: (user) => {
           if (user) {
-            alert('Login realizado com sucesso!');
-            this.router.navigate(['/main']); // Redireciona para a página principal
+            alert(`Seja bem-vindo ${user.nome}!`);
+            this.userLogin.emit(user.nome);
+            this.router.navigate(['/main']);
           } else {
             alert('Credenciais inválidas. Tente novamente.');
           }

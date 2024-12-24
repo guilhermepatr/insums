@@ -14,7 +14,7 @@
         <!-- Coluna 2: Login com Email e Senha -->
         <div class="col-md-6">
           <h2 class="mb-4 title">Login</h2>
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" (submit)="login(emailInput.value, passwordInput.value)">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" #emailInput id="email" formControlName="email" class="form-control" placeholder="Digite seu email" required>

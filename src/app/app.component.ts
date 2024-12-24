@@ -18,9 +18,18 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'insums';
 
-  loggedInUserName: string | null = null; // Nome do usuário logado
+  loggedInUserName: string | null = null;
 
-  onUserLoggedIn(userName: string): void {
-    this.loggedInUserName = userName; // Atualiza o nome do usuário logado
+  handleUserLogin(userName: string) {
+    this.loggedInUserName = userName;
   }
+  
+  onActivate(event: any) {
+    if (event instanceof LoginComponent) {
+      event.userLogin.subscribe((userName: string) => {
+        this.loggedInUserName = userName;
+      });
+    }
+  }
+
 }
