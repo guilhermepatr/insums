@@ -1,2 +1,83 @@
+<!--open big Carrousel/slider-->
+<!--<div class="conteiner-slider">
+    <button (click)="btnControl() class=" btn-control btn-slider bi bi-chevron-left arrow-left" aria-label="Previous image"></button>
+    <button (click)="btnControl() class="btn-control btn-slider bi bi-chevron-right arrow-right" aria-label="Next image"></button>
+    <div class="gallery-wrapper">
+        <div class="gallery">
+            <img class="item current-item" src="https://res.cloudinary.com/ddbfgigsu/image/upload/v1735581825/project-insums/carrousel/erva-mate_rotiim.png" alt="Erva-Mate">
+            <img class="item" src="https://res.cloudinary.com/ddbfgigsu/image/upload/v1735581825/project-insums/carrousel/confot-pads_t8yte1.png" alt="Ração Pads">
+            <img class="item" src="https://res.cloudinary.com/ddbfgigsu/image/upload/v1735581824/project-insums/carrousel/boro-solo_owhcbn.png" alt="Boro Solo">
+       </div>
+    </div>
+</div>-->
+
+
+<div class="container-slider">
+    <!-- Botão para imagem anterior -->
+    <button 
+      class="btn-control btn-slider bi bi-chevron-left arrow-left" 
+      aria-label="Previous image" 
+      (click)="navigate('prev')">
+    </button>
+  
+    <!-- Botão para próxima imagem -->
+    <button 
+      class="btn-control btn-slider bi bi-chevron-right arrow-right" 
+      aria-label="Next image" 
+      (click)="navigate('next')">
+    </button>
+  
+    <!-- Galeria de imagens -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img
+          *ngFor="let image of images; let i = index"
+          [src]="image.src"
+          [alt]="image.alt"
+          class="item"
+          [ngClass]="{'current-item': i === currentIndex}"
+        />
+      </div>
+    </div>
+  </div>
+  <p>testesteste</p>
+
+  <div class="container-slider">
+    <!-- Botão para imagem anterior -->
+    <button
+      class="btn-control btn-slider bi bi-chevron-left arrow-left"
+      aria-label="Previous image"
+      (click)="navigate('prev')">
+    </button>
+  
+    <!-- Botão para próxima imagem -->
+    <button
+      class="btn-control btn-slider bi bi-chevron-right arrow-right"
+      aria-label="Next image"
+      (click)="navigate('next')">
+    </button>
+  
+    <!-- Galeria de imagens -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img
+          #sliderItem
+          *ngFor="let image of images; let i = index"
+          [src]="image.src"
+          [alt]="image.alt"
+          class="item"
+          [ngClass]="{'current-item': i === currentIndex}"
+        />
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+<!--close big Carrousel/slider-->
+<!--open small Carrousel/slider-->
+
+<!--close small Carrousel/slider-->
 <p>main works!</p>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ad quam provident voluptate inventore ab officiis! Vitae quibusdam modi similique dignissimos, eos sapiente et. Similique voluptatum aut iusto quam in.
