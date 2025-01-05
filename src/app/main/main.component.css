@@ -10,10 +10,12 @@
     margin: 0;
     display: flex;
 
+    overflow: hidden;
+
 }
 
 .gallery-wrapper{
-    overflow-x: auto;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +26,10 @@
 .gallery{
     display: flex;
     flex-flow: nowrap;
+    transform: translateX(calc(-100% * ${currentIndex})); /* Adicionaremos via JavaScript */
+    transition: transform 0.5s ease-in-out;
 }
+
 
 .btn-slider{
     height: 48px;
@@ -35,6 +40,7 @@
     color: #8A8888;
     font-weight: bold;
     font-size: 20px;
+    z-index: 1;
 }
 
 .arrow-left, .arrow-right{    
@@ -72,10 +78,13 @@
 
 }
 
+
+
 .current-item{
     opacity: 1;
-    align-items: center;
-    overflow: hidden;}
+
+}
+
 
 /* This is from w3schools */
 /* 
