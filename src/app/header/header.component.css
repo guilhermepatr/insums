@@ -7,8 +7,37 @@
 }
 
 /*---------------BEGIN MENU HAMBURGUER---------------------------------*/
+.offcanvas-header{
+  background-color: #005b1e;
+
+}
+
+.title-bgr{
+  color: #efefef;
+}
+
+.login-bgr {
+  color: #efefef;
+  align-items: center;
+  background-color: #005b1e;
+  padding-left: 1rem;
+}
+
+.login-bgr a {
+  text-decoration: none;
+  color: #efefef;
+  
+}
+
+
+.small-login-bgr {
+  font-weight: bolder;
+  font-size: medium;
+}
+
+
+
 .nav-bgr{
-  border: 1px solid red;
 
 
 }
@@ -16,7 +45,6 @@
 .nav-bgr-list{
   list-style: none;
   text-decoration: none;
-  border: 1px solid red;
   margin-left: -2rem;
   
  

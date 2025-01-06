@@ -34,8 +34,8 @@
         aria-labelledby="offcanvasLeftLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasLeftLabel">
-            Offcanvas right
+          <h5 class="offcanvas-title title-bgr" id="offcanvasLeftLabel">
+            Olá!
           </h5>
 
           <button
@@ -45,6 +45,38 @@
             aria-label="Close"
           ></button>
         </div>
+
+        <div class="login-bgr">
+          <a [routerLink]="['/login']" >
+          <div>
+            <small>
+              <span *ngIf="userName; else defaultText" class="small-login-bgr">
+                {{ userName }}
+              </span>
+              <ng-template #defaultText>
+                <span class="small-login-bgr">Entre</span> ou
+                <span class="small-login-bgr">Cadastre-se</span><br />
+                Meus pedidos
+              </ng-template>
+            </small>
+          </div>
+          <!---
+          <div>
+            <small>
+              <span *ngIf="userName; else defaultText" class="small-login">
+                {{ userName }}
+              </span>
+              <ng-template #defaultText>
+                <span class="small-login">Entre</span> ou
+                <span class="small-login">Cadastre-se</span><br />
+                Meus pedidos
+              </ng-template>
+            </small>
+          </div>
+        -->
+        </a>
+        </div>
+
         <div class="offcanvas-body">
           <ul class="nav-bgr">
             <li class="nav-bgr-list">
