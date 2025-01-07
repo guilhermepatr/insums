@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .conteiner-slider{
     position: relative;
@@ -99,3 +95,104 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /*---------------------Start Info Img--------------------------*/
+ 
+ .container-info{
+    margin-top: 1rem;
+    margin-bottom: 1rem;  
+ }
+ 
+ 
+  .img-info{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .text-inf{
+    font-size: 14px;
+    font-weight:700;
+    color: #414042;
+    align-items: center;
+    margin:1rem 4rem 1rem 1rem ; 
+  }
+
+  .text-info-spam{
+    color: #00572D;
+    align-items: end;
+  }
+    /*---------------------Finish Info Img--------------------------*/
+    /*---------------------Start Title--------------------------*/
+
+    .title-h3{
+        text-align: center;
+
+        padding-top: 1rem;
+        color: #00572D;
+        font-weight: 800;
+        font-family: "DM Sans", serif;
+    }
+
+    .text-day-day{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: #00572D;
+        font-weight: 700;
+        margin-top:-1rem ;
+    }
+
+    .bi-dot{
+        color: #5FB929;
+        font-size: 3rem;
+    }
+
+    /*---------------------Finish Title--------------------------*/
+
+     /*---------------------Start btm--------------------------*/
+     .container-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+     }
+
+     .btn-filter-news{
+        text-align: center;
+        background-color: #5FB929;
+        border: 1px #5FB929;
+        border-radius: 4px;
+        color: #414042;
+        height: 44.22px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: 1rem;
+        margin-left: 1rem;
+     }
+
+     .btn-filter{
+        text-align: center;
+        background-color: white;
+        border-radius: 4px;
+        color: #414042;
+        height: 44.22px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;  
+        margin-right: 1rem;
+        margin-left: 1rem;     
+     }
+
+
+
+
+
+
+     /*---------------------Finish btm--------------------------*/
