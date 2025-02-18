@@ -2,23 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router'; // Adicione esta importação
+import { Router } from '@angular/router';
 import { CustomValidators } from './custom-validators';
 import { UserService } from '../../user-service.service';
+import { PhonePipe } from '../../pipes/phone.pipe'; // Importando o Pipe
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule, PhonePipe] // Importando o Pipe no componente
 })
 export class RegisterComponent implements OnInit {
   registroForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService, // Adicione o serviço
-    private router: Router // Adicione o router
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
       sobrenome: ['', [Validators.required, Validators.minLength(2)]],
       dateNascimento: ['', [Validators.required, CustomValidators.maiorIdade]],
       email: ['', [Validators.required, Validators.email]],
+      telefone: ['', [Validators.required, Validators.pattern(/^\d{10,11}$/)]], // Validação para 10 ou 11 dígitos
       senha: ['', [
         Validators.required,
         Validators.minLength(8),
@@ -40,15 +42,14 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     if (this.registroForm.valid) {
-      // Remover confirmSenha antes de enviar
-      const userData = {...this.registroForm.value};
-      delete userData.confirmSenha;
-
+      const userData = { ...this.registroForm.value };
+      delete userData.confirmSenha; // Removendo confirmação de senha antes de enviar
+  
       console.log('Enviando dados:', userData); // Debug
-
+  
       this.userService.registerUser(userData).subscribe({
         next: (response) => {
-          console.log('Resposta do servidor:', response); // Debug
+          console.log('Resposta do servidor:', response);
           alert('Usuário registrado com sucesso!');
           this.router.navigate(['/login']);
         },
@@ -58,10 +59,10 @@ export class RegisterComponent implements OnInit {
         }
       });
     } else {
-      console.log('Formulário inválido:', this.registroForm.errors); // Debug
+      console.log('Formulário inválido:', this.registroForm.errors);
     }
   }
-
+  
 
   getErrorMessage(field: string): string {
     const control = this.registroForm.get(field);
@@ -72,6 +73,7 @@ export class RegisterComponent implements OnInit {
       if (control.errors['senhaFraca']) return 'A senha deve conter letras maiúsculas, minúsculas e números';
       if (control.errors['menorIdade']) return 'Você deve ter mais de 18 anos';
       if (control.errors['senhasDiferentes']) return 'As senhas não coincidem';
+      if (control.errors['pattern']) return 'Telefone inválido. Use apenas números com DDD';
     }
     return '';
   }

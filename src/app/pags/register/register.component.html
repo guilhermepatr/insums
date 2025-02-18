@@ -25,6 +25,15 @@
             {{ getErrorMessage('dateNascimento') }}
           </small>
         </div>
+
+        <div class="mb-3">
+          <label for="telefone" class="form-label">Telefone</label>
+          <input type="text" id="telefone" formControlName="telefone" class="form-control" placeholder="Digite seu telefone">
+          <small class="text-danger" *ngIf="registroForm.get('telefone')?.errors && registroForm.get('telefone')?.touched">
+            {{ getErrorMessage('telefone') }}
+          </small>
+          <p class="mt-2">Formato: {{ registroForm.get('telefone')?.value | phone }}</p> 
+        </div>
   
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>

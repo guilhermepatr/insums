@@ -1,6 +1,6 @@
-
 main{
-    background-color: #EEEEEE;
+    background-color:#f5f5f5
+    
 }
 
 .conteiner-slider{
@@ -8,25 +8,19 @@ main{
     max-width: 100%;
     margin: 0;
     display: flex;
-
     overflow: hidden;
-
 }
 
-.gallery-wrapper{
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
+@media(width < 576px){
+  .big-carrousel-lg{
+    display: none;
+  }
 }
 
-.gallery{
-    display: flex;
-    flex-flow: nowrap;
-    transform: translateX(calc(-100% * ${currentIndex})); /* Adicionaremos via JavaScript */
-    transition: transform 0.5s ease-in-out;
+@media(width > 576.1px){
+  .big-carrousel-sm{
+    display: none;
+  }
 }
 
 
@@ -100,10 +94,26 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
   }
 
   /*---------------------Start Info Img--------------------------*/
- 
+  .carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    background-color: #00572D;
+  }
+
+
+
+  .carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+
+
+
  .container-info{
-    margin-top: 1rem;
-    margin-bottom: 1rem;  
+    margin-top: 2rem;
+    margin-bottom: 2rem;
  }
  
  
@@ -125,12 +135,43 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
     color: #00572D;
     align-items: end;
   }
+
+  @media(width >= 576.1px){
+    .info-sm{
+      display: none;
+    }
+  }
+
+  @media(width < 576px){
+    .info-lg{
+      display: none;
+    }
+
+    .img-info{
+      display: block;
+      text-align: center;
+    }
+  
+    .text-inf{
+      font-size: 12px;
+      font-weight:700;
+      color: #414042;
+      align-items: center;
+      margin:1rem 1rem 1rem 1rem ;
+    }
+  
+    .text-info-spam{
+      color: #00572D;
+      align-items: end;
+    }
+
+  }
     /*---------------------Finish Info Img--------------------------*/
     /*---------------------Start Title--------------------------*/
 
     .title-h3{
         text-align: center;
-
+        margin-bottom: 2rem;
         padding-top: 1rem;
         color: #00572D;
         font-weight: 800;
@@ -144,7 +185,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
         text-transform: uppercase;
         color: #00572D;
         font-weight: 700;
-        margin-top:-1rem ;
+        text-align: center;
     }
 
     .bi-dot{
@@ -155,13 +196,37 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
     /*---------------------Finish Title--------------------------*/
 
      /*---------------------Start btm--------------------------*/
-     .container-btn{
+
+     @media(width > 991.91px){
+      .container-btn{
         display: flex;
-        justify-content: center;
+        text-align: center;
         align-items: center;
+        justify-content:  center;
         margin-top: 1rem;
         margin-bottom: 1rem;
-     }
+      }
+    }
+     
+
+     @media(width < 576px){
+      .container-btn{
+        display: grid;
+      }
+    }
+
+      @media (min-width: 576.1px) and (max-width: 991.8px){
+        .container-btn{
+          display: block;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .btn-filter{
+          margin-top:1rem ;
+        }
+        }
 
      .btn-filter-news{
         text-align: center;
@@ -196,18 +261,48 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
 
      /*---------------------Finish btm--------------------------*/
       /*---------------------Start Card--------------------------*/
-      .container-cards{
+
+      @media(width >576.1px)
+      {
+        .carouselLartCardSmall{
+          display: none;
+        }
+      }
+      @media (width < 576px){
+        .carouselLartCardLarge{
+          display: none;
+        }
+        .cards{
+          max-width: 12rem;
+  
+        }
+
+        .btn-see{
+          padding-bottom: 3rem;
+        }
+
+
+      }
+      .container-card{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .container-link-card{
         display: flex;
         justify-content: center;
         margin-bottom: 1.5rem;
         margin-top: 1.5rem;
+        text-decoration: none;
         
       }
       .cards{
         border-radius: 5px;
         text-align: center;
-        width: 17rem;
+        width: 15rem;
         background-color: #FFFFFF;
+       
       }
 
       .container-btn-like{
@@ -248,6 +343,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
         
       }
       .img-cards{
+        width: 100%;
         
       }
 
@@ -266,6 +362,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
         margin-bottom: 1rem;
         font-size: small;
         border-radius: 3px;
+        color: #00572D;
       }
 
       .text-card-info-name{
@@ -274,11 +371,11 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
         margin-right: 1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
-
+        color:#414042;
       }
 
       .free-space-size{
-        background: #00572D;
+        background: white;
         height: 2rem;
 
       }
@@ -289,11 +386,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
         color: #00572D;
       }
 
-      .container-price{
-        display: ;
-      }
-
-      .card-price{
+        .card-price{
         color: #00572D;
         font-weight:700 ;
         font-family: "DM Sans", serif;
@@ -327,12 +420,201 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
       }
       .btn-see{
         color: #00572D;
+        font-weight: bold;
         background-color: white;
         border-radius: 4px;
+        border: 2px solid #00572D;
         margin-bottom: 1rem;
         height: 2.5rem;
+        
         padding-left: 3rem;
         padding-right: 3rem;   
         
       }
        /*---------------------Start Card--------------------------*/
+
+        /*---------------------Start Banner SM--------------------------*/
+     
+        @media (width < 576.1px){
+           
+           .banner-md,.banner-lg{
+            display: none;
+           }
+        }
+
+        .card-banner{
+          margin-bottom:3rem;
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+
+        .banner-sm{
+          display: flex;
+          justify-content: center;
+         }
+
+
+         .card-banner-md{
+          border: 1px solid red;
+          display: flex;
+          justify-content: space-evenly;
+          padding: 0 5rem 5rem 5rem;
+          }
+
+         
+
+
+        /*---------------------Finish Banner SM--------------------------*/
+        /*---------------------------------------------------------------*/
+         /*---------------------Start Banner MD--------------------------*/
+
+          @media (min-width: 576.1px) and (max-width: 991.9px) {
+           
+            .banner-sm, .banner-lg{
+             display: none;
+            } 
+            
+           }
+           /*---------------------Finish Banner MD--------------------------*/
+
+         /*---------------------Start Banner MD--------------------------*/
+
+          @media (width >= 992px){
+           
+            .banner-sm, .banner-md{
+             display: none;
+            }
+ 
+                          
+            .banner-img{
+             display: flex;
+             justify-content: center;
+             gap: 1rem;
+             margin-top: 1rem;
+             margin-bottom: 2rem;
+            }
+            
+           }
+           /*---------------------Finish Banner MD--------------------------*/
+
+           /*Produtos para o campo*/
+           .for-farm{
+            margin-top: 2rem;
+           }
+
+           /**************Start last card buy large-card *************************/
+           @media (width < 576px){
+            .last-small-card-sm, .carouselLastCard-Md{
+              display: none;
+            }
+           }
+
+
+           @media (min-width: 576.1px) and (max-width: 991.9px) {
+           
+            .carouselLartCardLarge{
+             display: none;
+            } 
+            
+           }
+
+           /**************Start last card buy small-card *************************/
+           @media (width > 991.91px){
+            .carouselLastCard-Md{
+              display: none;
+            }
+           }
+
+             /**************Lard Brand and text *************************/
+
+           .container-text-brand-md{
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            margin-left: 10rem;
+            margin-right: 10rem;
+           }
+
+           .brand-logo-md{
+            justify-content: center;
+            align-items: center;
+            background-color:#00572D;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+                 
+           }
+
+           .brand-logo-md img{
+            margin-left: 1rem;
+            margin-top: 3rem;
+            justify-content: center;
+            align-items: center;   
+           }
+
+           .text-insums{
+            margin-left: 7.5rem;
+            padding-left: 5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+            background-color: #5FB929;
+            text-align: justify;
+           }
+          
+         
+
+           @media (width >= 576px){
+            .brand-sm {
+              display: none;
+            }
+           }
+
+           /**************Small Brand and text *************************/
+
+           @media (width < 576px){
+           
+            .brand-md{
+             display: none;
+            }
+           }
+
+           .container-text-brand-sm{
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            margin-top: 5rem;
+
+           }
+
+           .brand-logo-sm{            
+            background-color:#00572D;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            position: absolute;
+          }
+
+          .brand-logo-sm img {
+            width: 100px;
+            margin-left: 0.75rem;
+            margin-top: 1.75rem;
+            justify-content: center;
+            align-items: center;
+           }
+           .text-insums-sm{
+            margin-bottom:3rem ;
+            padding-left: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            background-color: #5FB929;
+            text-align: justify;
+            margin-top:4rem;
+           }
+
+           
+
+
