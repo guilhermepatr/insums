@@ -25,15 +25,19 @@
             {{ getErrorMessage('dateNascimento') }}
           </small>
         </div>
-
+        <!--Inserção de pipe telefone-->
         <div class="mb-3">
           <label for="telefone" class="form-label">Telefone</label>
-          <input type="text" id="telefone" formControlName="telefone" class="form-control" placeholder="Digite seu telefone">
+          <input type="text" id="telefone" formControlName="telefone" class="form-control"
+  placeholder="Digite seu telefone"
+  [value]="registroForm.get('telefone')?.value | phone"
+  (input)="onTelefoneInput($event)">
+
+          
           <small class="text-danger" *ngIf="registroForm.get('telefone')?.errors && registroForm.get('telefone')?.touched">
             {{ getErrorMessage('telefone') }}
           </small>
-          <p class="mt-2">Formato: {{ registroForm.get('telefone')?.value | phone }}</p> 
-        </div>
+        </div>    
   
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>
@@ -43,17 +47,27 @@
           </small>
         </div>
   
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
           <label for="senha" class="form-label">Senha</label>
-          <input type="password" id="senha" formControlName="senha" class="form-control" placeholder="Digite sua senha">
+          <input [type]="mostrarSenha ? 'text' : 'password'" id="senha" formControlName="senha" class="form-control" placeholder="Digite sua senha">
+          <button type="button" class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y"
+                  (click)="toggleSenha()" style="border: none; background: none;">
+            <span *ngIf="mostrarSenha"><i class="bi bi-eye-fill"></i></span>
+            <span *ngIf="!mostrarSenha"><i class="bi bi-eye-slash-fill"></i></span>
+          </button>
           <small class="text-danger" *ngIf="registroForm.get('senha')?.errors && registroForm.get('senha')?.touched">
             {{ getErrorMessage('senha') }}
           </small>
         </div>
-  
-        <div class="mb-3">
+        
+        <div class="mb-3 position-relative">
           <label for="confirmSenha" class="form-label">Confirme sua Senha</label>
-          <input type="password" id="confirmSenha" formControlName="confirmSenha" class="form-control" placeholder="Confirme sua senha">
+          <input [type]="mostrarConfirmSenha ? 'text' : 'password'" id="confirmSenha" formControlName="confirmSenha" class="form-control" placeholder="Confirme sua senha">
+          <button type="button" class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y"
+                  (click)="toggleConfirmSenha()" style="border: none; background: none;">
+            <span *ngIf="mostrarConfirmSenha"><i class="bi bi-eye-fill"></i></span>
+            <span *ngIf="!mostrarConfirmSenha"><i class="bi bi-eye-slash-fill"></i></span>
+          </button>
           <small class="text-danger" *ngIf="registroForm.get('confirmSenha')?.errors && registroForm.get('confirmSenha')?.touched">
             {{ getErrorMessage('confirmSenha') }}
           </small>

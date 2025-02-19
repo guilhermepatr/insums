@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  mostrarSenha: boolean = false; // Variável para alternar a exibição da senha
+
   @Output() userLoggedIn = new EventEmitter<string>();
   @Output() userLogin = new EventEmitter<string>();
 
@@ -29,6 +31,10 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(8)]]
     });
+  }
+
+  toggleSenha() {
+    this.mostrarSenha = !this.mostrarSenha;
   }
 
   onSubmit() {

@@ -24,14 +24,22 @@
               </div>  
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 position-relative">
               <label for="password" class="form-label">Senha</label>
-              <input type="password" id="password" #passwordInput formControlName="senha" class="form-control" placeholder="Digite sua senha" required>
+              <input [type]="mostrarSenha ? 'text' : 'password'" id="password" formControlName="senha" class="form-control" placeholder="Digite sua senha" required>
+            
+              <button type="button" class="btn btn-outline-secondary position-absolute top-50 end-0 translate-middle-y"
+                      (click)="toggleSenha()" style="border: none; background: none;">
+                <span *ngIf="mostrarSenha"><i class="bi bi-eye-fill"></i></span>
+                <span *ngIf="!mostrarSenha"><i class="bi bi-eye-slash-fill"></i></span>
+              </button>
+            
               <div *ngIf="loginForm.get('senha')?.touched && loginForm.get('senha')?.invalid">
                 <small *ngIf="loginForm.get('senha')?.errors?.['required']">Senha é obrigatória.</small>
                 <small *ngIf="loginForm.get('senha')?.errors?.['minlength']">Senha deve ter no mínimo 6 caracteres.</small>
               </div>
             </div>
+
             <button type="submit" class="btn btn-success w-100">Sign In</button>    
             <div class="d-flex justify-content-between mb-3">
               <a href="#" class="link-secondary">Esqueceu a senha?</a>

@@ -6,10 +6,10 @@
       "dateNascimento": "2000-01-01",
       "email": "joao@exemplo.com",
       "senha": "SenhaForte123",
-      "id": 1
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Guilherme",
       "sobrenome": "Silva",
       "dateNascimento": "1996-06-19",
@@ -17,11 +17,29 @@
       "senha": "Gui123456"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Guilherme",
       "sobrenome": "Silva",
       "dateNascimento": "1996-06-19",
       "email": "guilhermeteste@hotmail.com",
+      "senha": "Gui123456"
+    },
+    {
+      "id": "261c",
+      "nome": "Guilherme",
+      "sobrenome": "Silva",
+      "dateNascimento": "1996-06-19",
+      "email": "guilhermeps96@hotmail.com",
+      "telefone": "42991343040",
+      "senha": "Gui123456"
+    },
+    {
+      "id": "6729",
+      "nome": "Guilherme",
+      "sobrenome": "Silva",
+      "dateNascimento": "1996-06-19",
+      "email": "guilhermeps96@hotmail.com",
+      "telefone": "(42) 99134-3040",
       "senha": "Gui123456"
     }
   ]

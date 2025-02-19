@@ -15,6 +15,8 @@ import { PhonePipe } from '../../pipes/phone.pipe'; // Importando o Pipe
 })
 export class RegisterComponent implements OnInit {
   registroForm!: FormGroup;
+  mostrarSenha: boolean = false; // Controle de visibilidade da senha
+  mostrarConfirmSenha: boolean = false; // Controle de visibilidade da confirmação de senha
 
   constructor(
     private fb: FormBuilder,
@@ -22,23 +24,27 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {}
 
+ 
   ngOnInit() {
     this.registroForm = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(2)]],
       sobrenome: ['', [Validators.required, Validators.minLength(2)]],
       dateNascimento: ['', [Validators.required, CustomValidators.maiorIdade]],
       email: ['', [Validators.required, Validators.email]],
-      telefone: ['', [Validators.required, Validators.pattern(/^\d{10,11}$/)]], // Validação para 10 ou 11 dígitos
-      senha: ['', [
-        Validators.required,
-        Validators.minLength(8),
-        CustomValidators.senhaForte
-      ]],
-      confirmSenha: ['', [Validators.required]]
+      telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{4,5}-\d{4}$/)]], // 🔥 Validação para telefone
+      senha: ['', [Validators.required, Validators.minLength(8), CustomValidators.senhaForte]],
+        confirmSenha: ['', [Validators.required]],
     }, {
       validators: CustomValidators.senhasIguais
-    });
-  }
+    });}
+
+    toggleSenha() {
+      this.mostrarSenha = !this.mostrarSenha;
+    }
+
+    toggleConfirmSenha() {
+      this.mostrarConfirmSenha = !this.mostrarConfirmSenha;
+    }
 
   onSubmit() {
     if (this.registroForm.valid) {
@@ -61,6 +67,11 @@ export class RegisterComponent implements OnInit {
     } else {
       console.log('Formulário inválido:', this.registroForm.errors);
     }
+  }
+
+  onTelefoneInput(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.registroForm.get('telefone')?.setValue(input.value);
   }
   
 
