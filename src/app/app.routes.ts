@@ -12,5 +12,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent }, // Rota para o componente de login
     { path: 'register', component: RegisterComponent}, //Rota para o componente de registro
     { path: 'main', component: MainComponent},
+
     //{ path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
