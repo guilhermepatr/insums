@@ -4,11 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production --output-path=dist/insums/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:insums": "node dist/insums/server/server.mjs",
-    "json-server": "json-server -w db.json"
+    "json-server": "json-server -w db.json",
+    "ghpages": "npx angular-cli-ghpages --dir=dist/insums/browser/",
+    "deploy": "npm run build & npm run ghpages",
+    "json:server": "json-server-watch db.json",
+    "json: server: routes": "json-server-watch db.json --routes routes.json"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +24,7 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/platform-server": "^18.2.0",
+    "@angular/pwa": "^0.5.3",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.11",
     "bootstrap": "^5.3.3",
