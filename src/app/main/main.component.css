@@ -264,12 +264,12 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
 
       @media(width >576.1px)
       {
-        .carouselLartCardSmall{
+        .carouselLastCardSmall, .carouselFirstCardSmall{
           display: none;
         }
       }
       @media (width < 576px){
-        .carouselLartCardLarge{
+        .carouselLastCardLarge, .carouselFirstCardLarge, .carouselFirstCard-Md{
           display: none;
         }
         .cards{
@@ -345,10 +345,6 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
       .img-cards{
         width: 100%;
         
-      }
-
-      .container-text-card{
-   
       }
 
       .text-card-free-shipping{
@@ -455,7 +451,6 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
 
 
          .card-banner-md{
-          border: 1px solid red;
           display: flex;
           justify-content: space-evenly;
           padding: 0 5rem 5rem 5rem;
@@ -512,7 +507,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
 
            @media (min-width: 576.1px) and (max-width: 991.9px) {
            
-            .carouselLartCardLarge{
+            .carouselLastCardLarge, .carouselFirstCardLarge{
              display: none;
             } 
             
@@ -520,7 +515,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
 
            /**************Start last card buy small-card *************************/
            @media (width > 991.91px){
-            .carouselLastCard-Md{
+            .carouselLastCard-Md, .carouselFirstCard-Md{
               display: none;
             }
            }

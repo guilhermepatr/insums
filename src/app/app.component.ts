@@ -1,22 +1,31 @@
+import { MainComponent } from './main/main.component';
+import { RegisterComponent } from './pags/register/register.component';
+import { PhonePipe } from './pipes/phone.pipe';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './pags/login/login.component';
-import { MainComponent } from './main/main.component';
-import { RegisterComponent } from './pags/register/register.component';
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, FooterComponent, HeaderComponent, MainComponent, LoginComponent, RegisterComponent],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    RouterModule,
+    CommonModule,
+    FooterComponent,
+    HeaderComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'insums';
-
+  telefone = '41987654321';
   loggedInUserName: string | null = null;
 
   handleUserLogin(userName: string) {
@@ -30,5 +39,4 @@ export class AppComponent {
       });
     }
   }
-
 }

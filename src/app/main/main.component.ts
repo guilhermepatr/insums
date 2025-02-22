@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-main',
-    imports: [CommonModule],
+    standalone: true,
     templateUrl: './main.component.html',
     styleUrl: './main.component.css'
 })
