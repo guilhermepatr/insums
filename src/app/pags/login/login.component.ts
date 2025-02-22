@@ -1,17 +1,17 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Output, EventEmitter, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../user-service.service';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [RouterModule, CommonModule, ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    standalone: true,
+    imports: [RouterModule, CommonModule, ReactiveFormsModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;

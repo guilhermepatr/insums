@@ -3,15 +3,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CustomValidators } from './custom-validators';
 import { UserService } from '../../user-service.service';
 import { PhonePipe } from '../../pipes/phone.pipe'; // Importando o Pipe
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, PhonePipe] // Importando o Pipe no componente
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    standalone: true,
+    imports: [RouterModule, CommonModule, ReactiveFormsModule, PhonePipe] // Importando o Pipe no componente
 })
 export class RegisterComponent implements OnInit {
   registroForm!: FormGroup;
