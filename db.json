@@ -56,6 +56,21 @@
       "cidade": "Guarapuava",
       "estado": "PR",
       "numero": "406"
+    },
+    {
+      "id": "07c4",
+      "nome": "Guilherme",
+      "sobrenome": "Silva",
+      "dateNascimento": "1996-03-19",
+      "email": "guilhermeps96@hotmail.com",
+      "telefone": "(42) 99134-3040",
+      "senha": "Gui123456",
+      "cep": "85040150",
+      "logradouro": "Rua Diamantina",
+      "bairro": "Vila Carli",
+      "cidade": "Guarapuava",
+      "estado": "PR",
+      "numero": "406"
     }
   ]
 }

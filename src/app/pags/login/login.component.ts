@@ -40,6 +40,29 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, senha } = this.loginForm.value;
+  
+      this.userService.loginUser(email, senha)
+        .then(user => {
+          if (user) {
+            alert(`Seja bem-vindo ${user.nome}!`);
+            this.userLogin.emit(user.nome);
+            this.router.navigate(['/main']);
+          } else {
+            alert('Credenciais inválidas. Tente novamente.');
+          }
+        })
+        .catch(error => {
+          console.error('Erro no login:', error);
+          alert('Ocorreu um erro ao tentar fazer login. Tente novamente.');
+        });
+    } else {
+      alert('Por favor, preencha os campos corretamente.');
+    }
+  }
+  /*
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { email, senha } = this.loginForm.value;
       
       this.userService.loginUser(email, senha).subscribe({
         next: (user) => {
@@ -59,5 +82,5 @@ export class LoginComponent implements OnInit {
     } else {
       alert('Por favor, preencha os campos corretamente.');
     }
-  }
+  }*/
 }

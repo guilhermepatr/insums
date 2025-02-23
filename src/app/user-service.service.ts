@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
 import { map } from 'rxjs/operators';
+import { firstValueFrom } from 'rxjs';
 
 export interface User {
   id?: number;
@@ -44,6 +45,28 @@ export class UserService {
     return this.currentUserSubject.value;
   }
 
+  loginUser(email: string, senha: string): Promise<User | null> {
+    const url = `${this.apiUrl}?email=${email}&senha=${senha}`;
+    return firstValueFrom(
+      this.http.get<User[]>(url).pipe(
+        map(users => (users.length > 0 ? users[0] : null)),
+        tap(user => {
+          if (user) {
+            console.log('Usuário autenticado:', user);
+          } else {
+            console.warn('Credenciais inválidas.');
+          }
+        }),
+        catchError(error => {
+          console.error('Erro ao validar login:', error);
+          throw error;
+        })
+      )
+    );
+  }
+}
+
+/*
   loginUser(email: string, senha: string): Observable<User | null> {
     const url = `${this.apiUrl}?email=${email}&senha=${senha}`;
     return this.http.get<User[]>(url).pipe(
@@ -60,5 +83,4 @@ export class UserService {
         throw error;
       })
     );
-  }
-}
+  }*/
