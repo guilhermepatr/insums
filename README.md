@@ -1,3 +1,26 @@
+# Insums - Projeto de Desenvolvimento Web 2
+
+Este projeto tem como objetivo apresentar a aplicação desenvolvida durante a disciplina de Desenvolvimento Web 2. A ideia central é construir uma plataforma inspirada na Cooperativa Cocamar, com foco na venda de insumos agrícolas para os agricultores. O site foi projetado para ser responsivo e fácil de usar, proporcionando uma ótima experiência de compra online.
+
+### Inspiração e Protótipo
+
+O site foi inspirado pelo design da **Cooperativa Cocamar**, acessível em:  
+[www.lojacocamar.com.br](https://www.lojacocamar.com.br/).
+
+O protótipo foi desenvolvido no **Figma** e pode ser acessado através do link abaixo:  
+[Protótipo no Figma](https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0).
+
+### Deploy do Site
+
+O site foi hospedado no **GitHub Pages**, e pode ser acessado via o seguinte link:  
+[Insums - GitHub Pages](https://guilhermepatr.github.io/insums/main).
+
+---
+
+## Requisitos e Funcionalidades
+
+A seguir estão os requisitos atendidos e as funcionalidades implementadas no projeto:
+
 ### RA1 - Prototipar e projetar interfaces gráficas de usuário, considerando princípios de usabilidade e experiência do usuário.
 - [X] ID1: O aluno desenvolveu protótipos de interfaces que demonstram compreensão das diretrizes de usabilidade.
 - [X] ID2: O aluno projetou interfaces responsivas que se adaptam a diferentes tamanhos de tela.
@@ -33,15 +56,164 @@
 - [X] ID26: O aluno colaborou de maneira efetiva com outros membros do projeto, realizando fusões (merges) e resolução de conflitos de código de forma adequada e alinhada às práticas de desenvolvimento colaborativo.
 - [X] ID27: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
 
+## Como Rodar o Projeto
 
-ng build --configuration production --base-href /insums/
-npx angular-cli-ghpages --dir=dist/insums/browser
+### 1. **Rodando o Projeto Localmente**
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/guilhermepatr/insums.git
+   cd insums
+
+2. Instale as dependências:
+    npm install
+
+3. Rode a aplicação:
+    ng serve
 
 
-pwa - tem que usar o node 20
+Peço desculpas pela falha. Vou corrigir isso agora! Aqui está a versão completa do `README.md`:
 
-npm uninstall @angular/pwa
-ng add @angular/pwa
-ng build --configuration=production
-cd dist/insums/browser
-npx http-server -o
+```markdown
+# Insums - Projeto de Desenvolvimento Web 2
+
+Este projeto tem como objetivo apresentar a aplicação desenvolvida durante a disciplina de Desenvolvimento Web 2. A ideia central é construir uma plataforma inspirada na Cooperativa Cocamar, com foco na venda de insumos agrícolas para os agricultores. O site foi projetado para ser responsivo e fácil de usar, proporcionando uma ótima experiência de compra online.
+
+### Inspiração e Protótipo
+
+O site foi inspirado pelo design da **Cooperativa Cocamar**, acessível em:  
+[www.lojacocamar.com.br](https://www.lojacocamar.com.br/).
+
+O protótipo foi desenvolvido no **Figma** e pode ser acessado através do link abaixo:  
+[Protótipo no Figma](https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0).
+
+### Deploy do Site
+
+O site foi hospedado no **GitHub Pages**, e pode ser acessado via o seguinte link:  
+[Insums - GitHub Pages](https://guilhermepatr.github.io/insums/main).
+
+---
+
+## Requisitos e Funcionalidades
+
+A seguir estão os requisitos atendidos e as funcionalidades implementadas no projeto:
+
+### RA1 - Prototipar e projetar interfaces gráficas de usuário
+- **ID1**: Protótipos de interfaces que demonstram compreensão das diretrizes de usabilidade.
+- **ID2**: Interfaces responsivas que se adaptam a diferentes tamanhos de tela.
+
+### RA2 - Criar e reutilizar componentes em frameworks frontend
+- **ID3**: Componentes reutilizáveis e responsivos.
+- **ID4**: Uso de frameworks CSS para aprimorar a aparência e funcionalidade.
+- **ID5 e ID6**: Uso de diretivas estruturais para renderização condicional e repetição dinâmica de elementos.
+- **ID7**: Uso de Pipes para formatar dados de forma legível e agradável.
+
+### RA3 - Sincronizar dados entre a interface e o modelo de dados
+- **ID8 a ID11**: Uso de técnicas de binding (one-way e two-way) para garantir a sincronização entre a interface e o modelo de dados.
+
+### RA4 - Comunicação eficaz entre componentes
+- **ID12 a ID13**: Comunicação entre componentes usando serviços e diretivas `@Input` e `@Output`.
+
+### RA5 - Navegação intuitiva e responsiva
+- **ID14 a ID16**: Configuração de rotas e estrutura de navegação aninhada para facilitar a navegação entre páginas.
+
+### RA6 - Requisições assíncronas
+- **ID18 a ID24**: Requisições assíncronas a APIs (GET, POST, PUT, DELETE), com tratamento adequado de erros e respostas.
+
+### RA7 - Controle de versão e colaboração
+- **ID25 a ID27**: Uso do GitHub para controle de versão, configuração de branches, e deploy do projeto.
+
+---
+
+## Como Rodar o Projeto
+
+### 1. **Rodando o Projeto Localmente**
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/guilhermepatr/insums.git
+   cd insums
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+3. Rode a aplicação:
+   ```bash
+   ng serve
+   ```
+
+A aplicação estará disponível em `http://localhost:4200`.
+
+### 2. **Deploy no GitHub Pages**
+
+Para realizar o deploy da aplicação no **GitHub Pages**, siga os seguintes passos:
+
+1. Construa a aplicação em produção:
+   ```bash
+   ng build --configuration production --base-href /insums/
+   ```
+
+2. Utilize o Angular CLI para realizar o deploy:
+   ```bash
+   npx angular-cli-ghpages --dir=dist/insums/browser
+   ```
+
+O site estará disponível no GitHub Pages após o deploy.
+
+### 3. **Rodando como PWA (Progressive Web App)**
+
+Para rodar a aplicação como um PWA, execute os seguintes comandos:
+
+1. Instale o PWA:
+   ```bash
+   npm uninstall @angular/pwa
+   ng add @angular/pwa
+   ```
+
+2. Construa a aplicação em produção:
+   ```bash
+   ng build --configuration=production
+   ```
+
+3. Navegue até a pasta do build:
+   ```bash
+   cd dist/insums/browser
+   ```
+
+4. Utilize o `http-server` para rodar a aplicação:
+   ```bash
+   npx http-server -o
+   ```
+
+---
+
+## Tecnologias Utilizadas
+
+- **Angular**: Framework principal utilizado para desenvolvimento da aplicação.
+- **Bootstrap**: Framework de estilização utilizado para a aplicação.
+- **Figma**: Ferramenta utilizada para criação do protótipo visual.
+- **GitHub Pages**: Plataforma de hospedagem para o deploy do site.
+- **PWA**: Implementação de Progressive Web App para tornar a aplicação acessível offline.
+
+---
+
+## Considerações Finais
+
+Este projeto foi desenvolvido como parte do curso de **Desenvolvimento Web 2**, com foco na criação de uma aplicação moderna e responsiva, utilizando as melhores práticas de usabilidade, design e desenvolvimento web. Através dele, foram aplicados diversos conceitos de Angular, desde a criação de componentes reutilizáveis até a integração com APIs e implementação de requisições assíncronas.
+
+---
+
+## Links Úteis
+
+- **Repositório no GitHub**: [https://github.com/guilhermepatr/insums](https://github.com/guilhermepatr/insums)
+- **Aplicação em Produção**: [https://guilhermepatr.github.io/insums/main](https://guilhermepatr.github.io/insums/main)
+- **Protótipo no Figma**: [https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0](https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0)
+- **Apresetação do projeto**: 
+```
