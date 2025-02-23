@@ -1,6 +1,6 @@
-# Insums - Projeto de Desenvolvimento Web 2
+# Insums - Desenvolvimento de Aplicações Front-End com Frameworks e Componentes
 
-Este projeto tem como objetivo apresentar a aplicação desenvolvida durante a disciplina de Desenvolvimento Web 2. A ideia central é construir uma plataforma inspirada na Cooperativa Cocamar, com foco na venda de insumos agrícolas para os agricultores. O site foi projetado para ser responsivo e fácil de usar, proporcionando uma ótima experiência de compra online.
+Este projeto tem como objetivo apresentar a aplicação desenvolvida durante a disciplina de Desenvolvimento de Aplicações Front-End com Frameworks e Componentes. A ideia central é construir uma plataforma inspirada na Cooperativa Cocamar, com foco na venda de insumos agrícolas para os agricultores. O site foi projetado para ser responsivo e fácil de usar, proporcionando uma ótima experiência de compra online.
 
 ### Inspiração e Protótipo
 
