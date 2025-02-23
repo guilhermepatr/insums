@@ -56,6 +56,7 @@ A seguir estão os requisitos atendidos e as funcionalidades implementadas no pr
 - [X] ID26: O aluno colaborou de maneira efetiva com outros membros do projeto, realizando fusões (merges) e resolução de conflitos de código de forma adequada e alinhada às práticas de desenvolvimento colaborativo.
 - [X] ID27: O aluno planejou, configurou e executou o processo de build da aplicação, preparando-a para produção e realizou o deploy em um ambiente de hospedagem, tornando-a prontamente acessível para uso.
 
+```
 ## Como Rodar o Projeto
 
 ### 1. **Rodando o Projeto Localmente**
@@ -63,7 +64,7 @@ A seguir estão os requisitos atendidos e as funcionalidades implementadas no pr
 Para rodar o projeto localmente, siga os passos abaixo:
 
 1. Clone o repositório:
-   ```bash
+   bash
    git clone https://github.com/guilhermepatr/insums.git
    cd insums
 
