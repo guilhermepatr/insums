@@ -36,3 +36,12 @@
 
 ng build --configuration production --base-href /insums/
 npx angular-cli-ghpages --dir=dist/insums/browser
+
+
+pwa - tem que usar o node 20
+
+npm uninstall @angular/pwa
+ng add @angular/pwa
+ng build --configuration=production
+cd dist/insums/browser
+npx http-server -o

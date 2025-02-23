@@ -29,4 +29,9 @@ body {
   button:hover {
     background-color: #145c32;
   }
+
+  .main{
+    margin-top: 1rem;
+    margin-bottom: 1rem ;
+  }
   

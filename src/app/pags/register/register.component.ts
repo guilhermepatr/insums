@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { CustomValidators } from './custom-validators';
 import { UserService } from '../../user-service.service';
 import { PhonePipe } from '../../pipes/phone.pipe'; // Importando o Pipe
+import { HttpClient } from '@angular/common/http';// Importando a API
 
 @Component({
     selector: 'app-register',
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
  
@@ -35,6 +37,12 @@ export class RegisterComponent implements OnInit {
       telefone: ['', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{4,5}-\d{4}$/)]], // 🔥 Validação para telefone
       senha: ['', [Validators.required, Validators.minLength(8), CustomValidators.senhaForte]],
         confirmSenha: ['', [Validators.required]],
+        cep: ['', Validators.required],
+      logradouro: ['', Validators.required],
+      bairro: ['', Validators.required],
+      cidade: ['', Validators.required],
+      estado: ['', Validators.required],
+      numero: ['', Validators.required]
     }, {
       validators: CustomValidators.senhasIguais
     });}
@@ -73,6 +81,32 @@ export class RegisterComponent implements OnInit {
   onTelefoneInput(event: Event) {
     const input = event.target as HTMLInputElement;
     this.registroForm.get('telefone')?.setValue(input.value);
+  }
+
+  buscarEndereco(): void {
+    const cep = this.registroForm.get('cep')?.value;
+
+    // Validação do CEP
+    if (cep && cep.length === 8) {
+      this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`).subscribe(
+        (resposta) => {
+          if (resposta && !resposta.erro) {
+            // Preenche os campos com os dados retornados da API
+            this.registroForm.patchValue({
+              logradouro: resposta.logradouro,
+              bairro: resposta.bairro,
+              cidade: resposta.localidade,
+              estado: resposta.uf
+            });
+          } else {
+            alert('CEP não encontrado');
+          }
+        },
+        (erro) => {
+          alert('Erro ao buscar o CEP');
+        }
+      );
+    }
   }
   
 

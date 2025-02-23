@@ -1,5 +1,5 @@
-<div class="container vh-100 d-flex justify-content-center align-items-center">
-    <div class="row w-50 shadow-lg p-5 rounded cadastro-container">
+<div class="container d-flex justify-content-center align-items-center main">
+    <div class="row w-100 shadow-lg p-5 rounded cadastro-container">
       <h2 class="text-center mb-4">Cadastro</h2>
       <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
@@ -37,7 +37,55 @@
           <small class="text-danger" *ngIf="registroForm.get('telefone')?.errors && registroForm.get('telefone')?.touched">
             {{ getErrorMessage('telefone') }}
           </small>
-        </div>    
+        </div>  
+        
+        <div class="mb-3">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" id="cep" formControlName="cep" class="form-control" placeholder="Digite seu CEP" (blur)="buscarEndereco()">
+          <small class="text-danger" *ngIf="registroForm.get('cep')?.errors && registroForm.get('cep')?.touched">
+            {{ getErrorMessage('cep') }}
+          </small>
+        </div>
+        
+        <div class="mb-3">
+          <label for="logradouro" class="form-label">Rua</label>
+          <input type="text" id="logradouro" formControlName="logradouro" class="form-control" placeholder="Rua" [readonly]="true">
+        </div>
+        <!--API Publica-->
+        
+        <div class="mb-3">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" id="cep" formControlName="cep" class="form-control" placeholder="Digite seu CEP" (blur)="buscarEndereco()">
+          <small class="text-danger" *ngIf="registroForm.get('cep')?.errors && registroForm.get('cep')?.touched">
+            {{ getErrorMessage('cep') }}
+          </small>
+        </div>
+        
+        <div class="mb-3">
+          <label for="logradouro" class="form-label">Rua</label>
+          <input type="text" id="logradouro" formControlName="logradouro" class="form-control" placeholder="Rua" [readonly]="true">
+        </div>
+        
+        <div class="mb-3">
+          <label for="bairro" class="form-label">Bairro</label>
+          <input type="text" id="bairro" formControlName="bairro" class="form-control" placeholder="Bairro" [readonly]="true">
+        </div>
+        
+        <div class="mb-3">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" id="cidade" formControlName="cidade" class="form-control" placeholder="Cidade" [readonly]="true">
+        </div>
+        
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <input type="text" id="estado" formControlName="estado" class="form-control" placeholder="Estado" [readonly]="true">
+        </div>
+        
+        <div class="mb-3">
+          <label for="numero" class="form-label">Número da Casa</label>
+          <input type="text" id="numero" formControlName="numero" class="form-control" placeholder="Número">
+        </div>        
+        
   
         <div class="mb-3">
           <label for="email" class="form-label">E-mail</label>

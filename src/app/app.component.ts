@@ -7,7 +7,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './pags/login/login.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -18,7 +18,8 @@ import { LoginComponent } from './pags/login/login.component';
     RouterModule,
     CommonModule,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
