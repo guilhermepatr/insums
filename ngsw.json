@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1740272523160,
+  "timestamp": 1740274907505,
   "index": "/insums/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/insums/favicon.ico",
         "/insums/index.html",
-        "/insums/main-ZS2JVBUE.js",
+        "/insums/main-DL36D5QO.js",
         "/insums/manifest.webmanifest",
         "/insums/polyfills-FFHMD2TL.js",
         "/insums/scripts-EEEIPNC3.js",
@@ -54,8 +54,8 @@
     "/insums/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/insums/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/insums/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/insums/index.html": "7b094cf5bf0ecaf6b09a7e3563cfb34e7275bb15",
-    "/insums/main-ZS2JVBUE.js": "9758f742b2e7d25d04e3ae2fc6e28d6291e8f844",
+    "/insums/index.html": "fd14853e78e644b2a5c78d0574ea09f255a322e0",
+    "/insums/main-DL36D5QO.js": "b1eed771d2fe7d5ddf5976e6c33ab3d7a5d62290",
     "/insums/manifest.webmanifest": "476327042b0678d833299f13ecf728d0348cf246",
     "/insums/media/bootstrap-icons-OCU552PF.woff": "d5831fd39baf13aff7626e483b9a089730f18604",
     "/insums/media/bootstrap-icons-X6UQXWUS.woff2": "020c3c6f9280a315e8425d7f92e15bcd0cdda1b2",
