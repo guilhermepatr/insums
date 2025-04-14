@@ -17,6 +17,13 @@ O site foi hospedado no **GitHub Pages**, e pode ser acessado via o seguinte lin
 
 ---
 
+## Links Úteis
+
+- **Repositório no GitHub**: [https://github.com/guilhermepatr/insums](https://github.com/guilhermepatr/insums)
+- **Aplicação em Produção**: [https://guilhermepatr.github.io/insums/main](https://guilhermepatr.github.io/insums/main)
+- **Protótipo no Figma**: [https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0](https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0)
+- **Apresetação do projeto**: [https://youtu.be/x65e-oHIIXY](https://youtu.be/x65e-oHIIXY)
+
 ## Requisitos e Funcionalidades
 
 A seguir estão os requisitos atendidos e as funcionalidades implementadas no projeto:
@@ -137,9 +144,4 @@ Este projeto foi desenvolvido como parte do curso de **Desenvolvimento Web 2**, 
 
 ---
 
-## Links Úteis
 
-- **Repositório no GitHub**: [https://github.com/guilhermepatr/insums](https://github.com/guilhermepatr/insums)
-- **Aplicação em Produção**: [https://guilhermepatr.github.io/insums/main](https://guilhermepatr.github.io/insums/main)
-- **Protótipo no Figma**: [https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0](https://www.figma.com/design/lZpVjoWAfj2YirWJRsIkOG/loja-insumos-do-campo?node-id=13-1570&p=f&t=u3LEOrgqWdwdBsrA-0)
-- **Apresetação do projeto**: [https://youtu.be/x65e-oHIIXY](https://youtu.be/x65e-oHIIXY)
