@@ -107,7 +107,7 @@ Para rodar a aplicação como um PWA, execute os seguintes comandos:
 
 1. Instale o PWA:
    ```bash
-   npm uninstall @angular/pwa
+   npm install @angular/pwa
    ng add @angular/pwa
    ```
 
